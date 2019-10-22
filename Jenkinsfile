@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Junit with JOCOCO') {
             steps {
-               jacoco(
-                   execPattern: '**/**.exec',
-                   classPattern: 'target/classes',
-                   sourcePattern: '**/src/*/java',
-                   exclusionPattern: '**/test/*'
-               )
+               jacoco( 
+      execPattern: 'target/*.exec',
+      classPattern: 'target/classes',
+      sourcePattern: 'src/main/java',
+      exclusionPattern: 'src/test*'
+)
             }
         }
       /*  stage('Artifactory Upload'){
