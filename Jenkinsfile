@@ -8,6 +8,12 @@ pipeline {
                 }
             }
         }
+        
+        stage('Maven Build') {
+            steps {
+                 sh 'mvn clean package'
+            }
+        }
         stage('Junit with JOCOCO') {
             steps {
                jacoco( 
@@ -16,11 +22,6 @@ pipeline {
       sourcePattern: 'src/main/java'
      
 )
-            }
-        }
-        stage('Maven Build') {
-            steps {
-                 sh 'mvn clean package'
             }
         }
         stage('Artifactory Upload'){
