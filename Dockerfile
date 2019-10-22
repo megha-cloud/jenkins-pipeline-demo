@@ -2,4 +2,4 @@ FROM tomcat
 
 EXPOSE 8080
 
-ADD /target/maven-git-test*.jar /usr/local/tomcat/webapps/
+ADD /target/pipeline-jenkins-demo*.war /usr/local/tomcat/webapps/
