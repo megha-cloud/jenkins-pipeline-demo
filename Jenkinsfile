@@ -4,7 +4,7 @@ pipeline {
         stage('SonarQube Report') {
             steps {
                 withSonarQubeEnv('SonarQube7'){
-                    sh 'mvn clean sonar:sonar -Dsonar.host.url=http://137.116.74.244:9000 -Dsonar.projectKey="pipelineDemo1" -Dsonar.sources=src -Dsonar.java.binaries=.'
+                    sh 'mvn clean sonar:sonar -Dsonar.host.url=http://137.116.74.244:9000 -Dsonar.projectKey="pipelineDemo1" -Dsonar.sources=src/main/java -Dsonar.java.binaries=.'
                 }
             }
         }
