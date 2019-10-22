@@ -17,10 +17,10 @@ pipeline {
         stage('Junit with JOCOCO') {
             steps {
                jacoco(
-                   execPattern: 'target/jacoco.exec',
+                   execPattern: '**/**.exec',
                    classPattern: '**/classes',
-                   sourcePattern: '**/src/*/java',
-                   exclusionPattern: '**/test/'
+                   sourcePattern: '**/src/main/java',
+                   exclusionPattern: '**/src/test/java'
                )
             }
         }
