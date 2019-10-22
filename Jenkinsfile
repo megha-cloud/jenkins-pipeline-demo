@@ -20,7 +20,7 @@ pipeline {
                    execPattern: '**/**.exec',
                    classPattern: 'target/classes',
                    sourcePattern: '**/src/*/java',
-                   exclusionPattern: '**/src/test/*'
+                   exclusionPattern: '**/test/*'
                )
             }
         }
