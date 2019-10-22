@@ -17,8 +17,9 @@ pipeline {
         stage('Junit with JOCOCO') {
             steps {
                jacoco(
-                   execPattern: 'target/jacoco.exec',
-                   sourcePattern: '**/src/*/java'
+                   execPattern: '**/**.exec',
+                   classPattern: '**/classes',
+                   sourcePattern: '**/src/main/java'
                )
             }
         }
