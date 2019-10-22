@@ -1,14 +1,13 @@
 pipeline {
     agent any
     stages {
-    /*    stage('SonarQube Report') {
+        stage('SonarQube Report') {
             steps {
                 withSonarQubeEnv('SonarQube7'){
                     sh 'mvn clean sonar:sonar -Dsonar.host.url=http://137.116.74.244:9000 -Dsonar.projectKey="pipelineDemo1" -Dsonar.sources=src/main/java -Dsonar.java.binaries=.'
                 }
             }
-        }
-      */  
+        } 
         stage('Maven Build') {
             steps {
                  sh 'mvn clean package'
@@ -17,14 +16,14 @@ pipeline {
         stage('Junit with JOCOCO') {
             steps {
                step([$class: 'JacocoPublisher', 
-      execPattern: 'target/*.exec',
-      classPattern: 'target/classes',
-      sourcePattern: '**/src/*/java',
-      exclusionPattern: 'src/test*'
-])
+                    execPattern: 'target/*.exec',
+                    classPattern: 'target/classes',
+                    sourcePattern: '**/src/*/java',
+                    exclusionPattern: 'src/test*'
+               ])
             }
         }
-      /*  stage('Artifactory Upload'){
+        stage('Artifactory Upload'){
             steps {
                 rtUpload (
                     serverId: 'Artifactoty 6.13',
@@ -50,6 +49,6 @@ pipeline {
                 }
             } 
             
-        }*/
+        }
     }
 }
