@@ -30,7 +30,7 @@ pipeline {
                     spec: '''{
                         "files": [
                          {
-                            "pattern": "/var/lib/jenkins/workspace/pipelineDemo1/target/maven-git-test*.jar",
+                            "pattern": "/var/lib/jenkins/workspace/jenkins-pipeline-demo/target/pipeline-jenkins-demo*.war",
                             "target": "jenkins-maven-project-snapshot/"
                          }
                         ]
