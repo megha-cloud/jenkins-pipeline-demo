@@ -13,7 +13,7 @@ pipeline {
                 step([$class: 'JacocoPublisher', 
                     execPattern: '**/**.exec',
                     classPattern: '**/classes',
-                    sourcePattern: '**/src',
+                    sourcePattern: '**/src/main/java',
                     inclusionPattern: '**/*.java'
                 ])
             }
