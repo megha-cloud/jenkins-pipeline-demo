@@ -1,5 +1,5 @@
-FROM tomcat
+FROM jboss/wildfly
 
-EXPOSE 8080
+EXPOSE 8585
 
-ADD /target/pipeline-jenkins-demo*.war /usr/local/tomcat/webapps/ROOT/
+ADD /target/pipeline-jenkins-demo*.war /opt/jboss/wildfly/standalone/deployments/
