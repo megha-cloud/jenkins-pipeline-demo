@@ -43,7 +43,7 @@ pipeline {
             steps{
                 script{
                     docker.withRegistry('https://registry.hub.docker.com','dockerhub'){
-                        myImage=docker.build("megha8docker/pipeline-demo-repo:2.0")
+                        myImage=docker.build("megha8docker/pipeline-demo-repo:3.0")
                         myImage.push()
                     }    
                 }
